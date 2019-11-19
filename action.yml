@@ -1,0 +1,23 @@
+name: 'Java Format Checker'
+description: 'Check the java code with the google java formatter of <https://github.com/google/google-java-format>'
+
+inputs:
+  version:
+    description: 'Version of the google java formatter'
+    required: true
+  dir:
+    description: 'Directory which is the base directory of the pattern'
+    required: false
+    default: './'
+  pattern:
+    description: 'Shell pattern (with globstar) that matches the files to check the format'
+    required: false
+    default: '**/*.java'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '${{ inputs.version }}'
+    - '${{ inputs.dir }}'
+    - '${{ inputs.pattern }}'
