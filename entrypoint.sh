@@ -14,7 +14,7 @@ function download_formatter() {
   local version=$2
   local url="https://repo.maven.apache.org/maven2/com/google/googlejavaformat/google-java-format/$version/google-java-format-$version-all-deps.jar"
   echo "Downloading formatter from $url"
-  curl -LosS "$jar_name" "$url"
+  curl -Lo "$jar_name" "$url" 2> /dev/null
 
   if [ "$?" != "0" ]; then
     echo "Failed to load google java formater version $version from maven central (url see above)."
