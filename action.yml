@@ -15,9 +15,5 @@ inputs:
     default: '**/*.java'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - '${{ inputs.version }}'
-    - '${{ inputs.dir }}'
-    - '${{ inputs.pattern }}'
+  using: 'node12'
+  main: 'lib/main.js'
