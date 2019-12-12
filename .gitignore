@@ -1,2 +1,5 @@
-node_modules
-lib
+#All dependencies and lib in release:
+#https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-a-javascript-action#commit-and-push-your-action-to-github
+
+#node_modules
+#lib
