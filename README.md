@@ -10,8 +10,8 @@ jobs:
     name: Check format
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
-    - uses: m273d15/java-format-action@v1
+      uses: actions/checkout@v2
+    - uses: m273d15/java-format-action@v1.1
       with:
         version: '1.7'
         dir: './java' # Optional default is './'
