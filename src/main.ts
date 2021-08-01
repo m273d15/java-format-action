@@ -12,7 +12,7 @@ async function run() {
     const formatter = new Formatter(version);
     const jar = await formatter.getJar();
     const files = glob.sync(`${dir}/${pattern}`)
-    await exec.exec('java', ['-jar', jar, '--dry-run', '--set-exit-if-changed', ...files])
+    await exec.exec('java', ['--add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED', '--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED', '--add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED', '--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED', '--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED', '-jar', jar, '--dry-run', '--set-exit-if-changed', ...files])
   } catch (error) {
     core.setFailed(error.message);
   }
